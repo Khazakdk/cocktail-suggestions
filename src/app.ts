@@ -1,6 +1,6 @@
 import express from 'express';
-import { CommonRoutesConfig } from './routes/common'
-import { IngredientRoutes } from './routes/ingredient'
+import { CommonRoutesConfig } from './entities/common/common.routes'
+import { IngredientRoutes } from './entities/ingredients/ingredient.routes'
 const app = express();
 const port = 8080; // default port to listen
 const routes: Array<CommonRoutesConfig> = [];

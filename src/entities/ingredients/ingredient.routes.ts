@@ -1,4 +1,4 @@
-import { CommonRoutesConfig } from './common';
+import { CommonRoutesConfig } from '../common/common.routes';
 import express from 'express';
 
 export class IngredientRoutes extends CommonRoutesConfig {
@@ -23,7 +23,7 @@ export class IngredientRoutes extends CommonRoutesConfig {
       .get( (req: express.Request, res: express.Response) => {
         res.status(200).send("get ingredient")
       })
-      .post( (req: express.Request, res: express.Response) => {
+      .put( (req: express.Request, res: express.Response) => {
         res.status(200).send("post ingredient")
       })
       .delete( (req: express.Request, res: express.Response) => {
