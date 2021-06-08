@@ -16,7 +16,4 @@ app.get( '/', ( req, res ) => {
 // start the Express server
 app.listen( port, () => {
     console.log( `server started at http://localhost:${ port }` );
-    routes.forEach(element => {
-        console.log(element)
-    });
 } );

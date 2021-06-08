@@ -1,4 +1,7 @@
 import { CommonRoutesConfig } from '../common/common.routes';
+import CommonMiddleware from '../common/common.middleware';
+import IngredientsController from './ingredients.controller';
+import IngredientsMiddleware from './ingredient.middleware';
 import express from 'express';
 
 export class IngredientRoutes extends CommonRoutesConfig {
@@ -8,27 +11,15 @@ export class IngredientRoutes extends CommonRoutesConfig {
 
   configureRoutes() {
     this.app.route('/ingredients')
-      .get( (req: express.Request, res: express.Response) => {
-        res.status(200).send("ingredients")
-      })
-      .post( (req: express.Request, res: express.Response) => {
-        res.status(200).send("post ingredients")
-      });
+      .get(IngredientsController.listIngredients)
+      .post(IngredientsController.createIngredient);
 
-    this.app.route('/ingredients/:id')
-      .all( (req: express.Request, res: express.Response, next: express.NextFunction) => {
-        next();
-      })
-      
-      .get( (req: express.Request, res: express.Response) => {
-        res.status(200).send("get ingredient")
-      })
-      .put( (req: express.Request, res: express.Response) => {
-        res.status(200).send("post ingredient")
-      })
-      .delete( (req: express.Request, res: express.Response) => {
-        res.status(200).send("delete ingredient")
-      });
+    this.app.param("uuid", CommonMiddleware.extractUuidFromUrl);  
+    this.app.route('/ingredients/:uuid')
+      .all(IngredientsMiddleware.validateUuid)      
+      .get(IngredientsController.getIngredientByUuid)
+      .put(IngredientsController.updateIngredientByUuid)
+      .delete(IngredientsController.deleteIngredientByUuid);
     
     return this.app;      
   }
