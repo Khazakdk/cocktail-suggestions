@@ -1,0 +1,6 @@
+curl --request POST 'localhost:8080/ingredients' --header 'Content-Type: application/json' --data-raw '{"name": "food", "uuid": "ca8fa8ed-55ed-4b66-9a8b-7d37aa45a3fe"}'
+curl --request GET 'localhost:8080/ingredients/ca8fa8ed-55ed-4b66-9a8b-7d37aa45a3fe' --header 'Content-Type: application/json' 
+curl --request GET 'localhost:8080/ingredients' --header 'Content-Type: application/json' --data-raw '{"name": "food"}'
+curl --request PUT 'localhost:8080/ingredients/ca8fa8ed-55ed-4b66-9a8b-7d37aa45a3fe' --header 'Content-Type: application/json' --data-raw '{"name": "newfood"}'
+curl --request GET 'localhost:8080/ingredients' --header 'Content-Type: application/json'
+curl --request DELETE 'localhost:8080/ingredients/ca8fa8ed-55ed-4b66-9a8b-7d37aa45a3fe' --header 'Content-Type: application/json' 

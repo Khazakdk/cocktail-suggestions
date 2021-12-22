@@ -1,4 +1,5 @@
 import express from 'express';
+import os from 'os';
 import { CommonRoutesConfig } from './entities/common/common.routes'
 import { IngredientRoutes } from './entities/ingredients/ingredient.routes'
 const app = express();
@@ -15,5 +16,5 @@ app.get( '/', ( req, res ) => {
 
 // start the Express server
 app.listen( port, () => {
-    console.log( `server started at http://localhost:${ port }` );
+    console.log( `server started at ${os.hostname}:${ port }` );
 } );

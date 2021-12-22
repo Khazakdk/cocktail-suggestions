@@ -7,7 +7,8 @@ class IngredientsDao {
     ingredients: Array<CreateIngredientDto> = [];
 
     async addIngredient(ingredient: CreateIngredientDto): Promise<string> {
-        ingredient.uuid = uuidv4();
+        console.log(ingredient)
+        ingredient.uuid = ingredient.uuid ?? uuidv4();
         this.ingredients.push(ingredient);
         return ingredient.uuid;
     }

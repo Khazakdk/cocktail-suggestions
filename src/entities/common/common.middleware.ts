@@ -2,8 +2,8 @@ import express from 'express'
 
 class CommonMiddleware {
     async extractUuidFromUrl(req: express.Request, res: express.Response, next: express.NextFunction) {
-        console.log(req);
         console.log("````````````````````")
+        console.log(req.params);
         req.body.uuid = req.params.uuid;
         next();
     }

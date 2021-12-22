@@ -2,7 +2,6 @@ import express from 'express'
 
 class IngredientsMiddleware {
     async validateUuid(req: express.Request, res: express.Response, next: express.NextFunction) {
-        console.log(req);
         if (req.body.uuid) {
             next();
         } 
