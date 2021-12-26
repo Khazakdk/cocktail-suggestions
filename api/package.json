@@ -1,7 +1,8 @@
 {
-  "name": "drink-app",
-  "version": "1.0.0",
+  "name": "cocktail-suggestions-api",
+  "version": "0.1",
   "main": "dist/app.js",
+  "repository": "https://github.com/Khazakdk/cocktail-suggestions.git",
   "author": "khazakdk <joe.j.sommer@gmail.com>",
   "license": "MIT",
   "dependencies": {

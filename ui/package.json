@@ -1,0 +1,8 @@
+{
+  "name": "cocktail-suggestions-web",
+  "version": "0.1",
+  "main": "index.js",
+  "repository": "https://github.com/Khazakdk/cocktail-suggestions.git",
+  "author": "khazakdk <joe.j.sommer@gmail.com>",
+  "license": "MIT"
+}
